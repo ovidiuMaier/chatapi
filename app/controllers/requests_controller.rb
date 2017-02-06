@@ -34,7 +34,7 @@ class RequestsController < ApplicationController
 
     def request_params
       # whitelist params
-      params.permit(:created_by, :question, :category, :wrong_answer, :correct_answer)
+      params.require(:request).permit(:question, :category, :wrong_answer, :correct_answer)
     end
 
     def set_request
