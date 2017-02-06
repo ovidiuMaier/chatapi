@@ -9,7 +9,7 @@ class RequestsController < ApplicationController
 
   # POST /requests
   def create
-    @request = request.create!(request_params)
+    @request = Request.create!(request_params)
     json_response(@request, :created)
   end
 
