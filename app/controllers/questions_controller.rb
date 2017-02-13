@@ -3,8 +3,10 @@ class QuestionsController < ApplicationController
 
   # GET /questions
   def index
-    @questions = Question.all
-    json_response(@questions)
+    nr = Question.count
+    index = rand(1..nr)
+    @question = Question.find(index)
+    json_response(@question)
   end
 
   # POST /questions
